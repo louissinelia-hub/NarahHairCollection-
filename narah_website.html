@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narah Hair Collection — Aprann Fè Perik Nan Kreyòl</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8D08A;
+  --gold-pale: #F5EAC8;
+  --dark: #120C07;
+  --dark2: #1E1108;
+  --brown: #3D1F10;
+  --brown-mid: #6B3A20;
+  --cream: #FAF3E8;
+  --cream2: #F2E8D4;
+  --rose: #C4725A;
+  --rose-light: #E8A090;
+  --green: #4A7C59;
+  --text: #2A1A0E;
+  --text-light: #7A5A40;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ── GRAIN OVERLAY ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 5%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(18, 12, 7, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  transition: all 0.3s;
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+
+.nav-logo span { color: var(--cream); font-weight: 400; font-style: italic; }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(250,243,232,0.65);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+
+.nav-cta {
+  background: var(--gold);
+  color: var(--dark) !important;
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-weight: 600 !important;
+  color: var(--dark) !important;
+  transition: background 0.2s, transform 0.2s !important;
+}
+.nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cream);
+  transition: all 0.3s;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--dark);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 100px 5% 60px;
+}
+
+/* Animated mesh background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(61,31,16,0.7) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 80% at 20% 80%, rgba(196,114,90,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 80% 10%, rgba(201,168,76,0.08) 0%, transparent 60%);
+}
+
+.hero-lines {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.04;
+}
+.hero-lines::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 40%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(201,168,76,1) 40px,
+    rgba(201,168,76,1) 41px
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  color: var(--gold-light);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.05;
+  margin-bottom: 24px;
+  animation: fadeUp 0.8s 0.1s ease both;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+  display: block;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: rgba(250,243,232,0.6);
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 40px;
+  animation: fadeUp 0.8s 0.2s ease both;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--dark);
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.35); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--cream);
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid rgba(250,243,232,0.25);
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Hero stats */
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  animation: fadeUp 0.8s 0.4s ease both;
+  flex-wrap: wrap;
+}
+
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.72rem;
+  color: rgba(250,243,232,0.45);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Hero visual (right side) */
+.hero-visual {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero-circle {
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--brown-mid), var(--dark));
+  border: 1px solid rgba(201,168,76,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 0 100px rgba(201,168,76,0.08);
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-16px); }
+}
+
+.hero-circle-inner {
+  text-align: center;
+  color: var(--gold);
+}
+.hero-circle-icon { font-size: 5rem; margin-bottom: 12px; display: block; }
+.hero-circle-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--cream);
+  line-height: 1.4;
+}
+.hero-circle-text span { color: var(--gold); display: block; font-style: italic; }
+
+/* Orbiting dots */
+.orbit {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  border: 1px dashed rgba(201,168,76,0.15);
+  animation: spin 20s linear infinite;
+}
+.orbit-dot {
+  position: absolute;
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  top: -4px;
+  left: 50%;
+  margin-left: -4px;
+  box-shadow: 0 0 10px rgba(201,168,76,0.5);
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── SECTIONS GENERAL ── */
+section { padding: 100px 5%; }
+
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.section-title em { font-style: italic; color: var(--rose); }
+
+.section-sub {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+/* ── MARQUEE STRIP ── */
+.marquee-strip {
+  background: var(--gold);
+  overflow: hidden;
+  padding: 14px 0;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 18s linear infinite;
+  gap: 0;
+}
+
+.marquee-track span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dark);
+  padding: 0 28px;
+}
+
+.marquee-track .dot {
+  color: var(--brown);
+  padding: 0;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ── ABOUT ── */
+.about {
+  background: var(--cream2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+}
+
+.about-card {
+  background: var(--dark);
+  border-radius: 24px;
+  padding: 50px 40px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.15);
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rose), var(--gold));
+}
+
+.about-card-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--cream);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.about-card-quote span { color: var(--gold); }
+
+.about-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.about-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brown-mid), var(--rose));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+}
+
+.about-author-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--cream);
+}
+.about-author-title {
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+}
+
+/* Floating badge */
+.about-badge {
+  position: absolute;
+  top: -18px;
+  right: 30px;
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 100px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.value-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: white;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(201,168,76,0.15);
+}
+
+.value-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+.value-text { font-size: 0.82rem; color: var(--text); font-weight: 500; line-height: 1.4; }
+
+/* ── PRODUCTS ── */
+.products { background: var(--dark); }
+.products .section-title { color: var(--cream); }
+.products .section-sub { color: rgba(250,243,232,0.55); }
+.products .section-label { color: var(--gold); }
+
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(201,168,76,0.3);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+
+.product-card.featured {
+  border-color: rgba(201,168,76,0.3);
+  background: rgba(201,168,76,0.06);
+}
+
+.product-thumb {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(18,12,7,0.5));
+}
+
+.p-gold { background: radial-gradient(circle at 40% 40%, #3D1F10, #120C07); }
+.p-rose { background: radial-gradient(circle at 40% 40%, #3D1520, #120C07); }
+.p-blue { background: radial-gradient(circle at 40% 40%, #102030, #120C07); }
+
+.product-badge-feat {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  z-index: 2;
+}
+
+.product-body { padding: 24px; }
+
+.product-cat {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.product-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.product-desc {
+  font-size: 0.82rem;
+  color: rgba(250,243,232,0.45);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.product-price-sub {
+  font-size: 0.65rem;
+  color: rgba(250,243,232,0.35);
+  display: block;
+  letter-spacing: 0.08em;
+}
+
+.product-btn {
+  background: rgba(201,168,76,0.15);
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.25s;
+  text-transform: uppercase;
+}
+.product-btn:hover { background: var(--gold); color: var(--dark); }
+
+/* ── COURSES ── */
+.courses { background: white; }
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 56px;
+}
+
+.course-card {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.07);
+  transition: all 0.35s;
+}
+.course-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.1); }
+
+.course-head {
+  padding: 32px 28px 24px;
+  position: relative;
+}
+
+.c-gold { background: var(--dark); }
+.c-rose { background: var(--brown); }
+.c-green { background: #1A2E20; }
+
+.course-level {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250,243,232,0.5);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.course-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.course-price-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-top: 8px;
+}
+
+.course-body {
+  padding: 24px 28px 28px;
+  background: white;
+}
+
+.course-includes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.course-includes li {
+  font-size: 0.84rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.course-includes li::before {
+  content: '✓';
+  color: var(--green);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.course-enroll {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--dark);
+  color: var(--gold);
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.course-enroll:hover { background: var(--gold); color: var(--dark); }
+
+/* ── TESTIMONIALS ── */
+.testimonials { background: var(--cream2); }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.testi-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  transition: transform 0.3s;
+}
+.testi-card:hover { transform: translateY(-4px); }
+
+.testi-quote {
+  font-size: 3rem;
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1;
+  margin-bottom: 12px;
+  opacity: 0.4;
+}
+
+.testi-text {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  margin-bottom: 22px;
+  font-style: italic;
+}
+
+.testi-stars {
+  color: var(--gold);
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testi-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.av1 { background: linear-gradient(135deg, #C4725A, #3D1F10); }
+.av2 { background: linear-gradient(135deg, #4A7C59, #1A2E20); }
+.av3 { background: linear-gradient(135deg, #3B6B8E, #0D1F2D); }
+
+.testi-name { font-weight: 600; font-size: 0.85rem; color: var(--text); }
+.testi-loc { font-size: 0.72rem; color: var(--text-light); }
+
+/* ── COMMUNITY ── */
+.community {
+  background: var(--dark);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.community::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+}
+
+.community-content { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+
+.community .section-title { color: var(--cream); font-size: clamp(2.2rem, 5vw, 3.8rem); }
+.community .section-sub { color: rgba(250,243,232,0.55); margin: 0 auto 48px; text-align: center; }
+
+.community-channels {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.channel-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px 22px;
+  border-radius: 100px;
+  color: rgba(250,243,232,0.75);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all 0.25s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.channel-pill:hover { border-color: var(--gold); color: var(--gold); }
+
+.big-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  opacity: 0.12;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* ── CONTACT ── */
+.contact { background: var(--cream); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-top: 56px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 14px 18px;
+  border: 1.5px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.92rem;
+  color: var(--text);
+  background: white;
+  transition: border-color 0.25s;
+  outline: none;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.contact-info { display: flex; flex-direction: column; gap: 28px; }
+
+.contact-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  width: 44px; height: 44px;
+  background: var(--dark);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.contact-item-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.contact-item-value {
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark);
+  padding: 60px 5% 30px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 32px;
+}
+
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.footer-desc {
+  font-size: 0.84rem;
+  color: rgba(250,243,232,0.4);
+  line-height: 1.7;
+  max-width: 280px;
+}
+
+.footer-col-title {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a {
+  text-decoration: none;
+  color: rgba(250,243,232,0.4);
+  font-size: 0.84rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--cream); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: rgba(250,243,232,0.25);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.social-btn {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  text-decoration: none;
+}
+.social-btn:hover { background: var(--gold); border-color: var(--gold); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .hero { padding: 100px 5% 60px; }
+  .hero-visual { display: none; }
+  .hero-content { max-width: 100%; }
+
+  .about { grid-template-columns: 1fr; gap: 40px; }
+  .products-grid { grid-template-columns: 1fr; }
+  .courses-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .about-values { grid-template-columns: 1fr; }
+  .hero-stats { gap: 24px; }
+}
+
+@media (max-width: 600px) {
+  section { padding: 70px 5%; }
+  .footer-top { grid-template-columns: 1fr; }
+  .hero-btns { flex-direction: column; }
+  .btn-primary, .btn-outline { text-align: center; }
+}
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  padding: 20px;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--cream);
+  border-radius: 24px;
+  padding: 48px;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s;
+  text-align: center;
+}
+.modal-overlay.open .modal { transform: scale(1); }
+
+.modal-close {
+  position: absolute;
+  top: 18px; right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+.modal h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.modal p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 24px; }
+.modal .btn-primary { width: 100%; text-align: center; }
+
+/* Cart badge */
+.cart-badge {
+  position: absolute;
+  top: -6px; right: -6px;
+  background: var(--rose);
+  color: white;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  font-size: 0.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-btn {
+  position: relative;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--cream);
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.cart-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Narah <span>Hair Collection</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">Vizyon</a></li>
+    <li><a href="#products">Boutik</a></li>
+    <li><a href="#courses">Kou</a></li>
+    <li><a href="#testimonials">Temwayaj</a></li>
+    <li><a href="#contact" class="nav-cta">Kòmanse</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">✦ Klas Anliy an Kreyòl</div>
+
+    <h1>
+      Aprann Fè Perik
+      <em>Nan Lang Ou</em>
+    </h1>
+
+    <p>Narah Hair Collection anseye fanm ayisyèn fè perik pwofe epi bati biznis yo — tout sa <strong style="color:var(--gold-light)">nan lang Kreyòl</strong>. Depi débutant rive ekspè.</p>
+
+    <div class="hero-btns">
+      <a href="#courses" class="btn-primary">Kòmanse Aprann →</a>
+      <a href="#products" class="btn-outline">Wè Boutik la</a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Elèv Aktif</div>
+      </div>
+      <div>
+        <div class="stat-num">4</div>
+        <div class="stat-label">Kou Kreyòl</div>
+      </div>
+      <div>
+        <div class="stat-num">7</div>
+        <div class="stat-label">Liv Disponib</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">En Kreyòl</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="orbit">
+      <div class="orbit-dot"></div>
+    </div>
+    <div class="hero-circle">
+      <div class="hero-circle-inner">
+        <span class="hero-circle-icon">👑</span>
+        <div class="hero-circle-text">
+          Premye Platfòm<br>Perik
+          <span>An Kreyòl</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MARQUEE ── -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>Lace Front Wig</span><span class="dot">✦</span>
+    <span>Gid Débutant</span><span class="dot">✦</span>
+    <span>Kou Anliy</span><span class="dot">✦</span>
+    <span>Nan Lang Kreyòl</span><span class="dot">✦</span>
+    <span>Kit Materyèl</span><span class="dot">✦</span>
+    <span>Biznis Perik</span><span class="dot">✦</span>
+    <span>Fanm Ayisyèn</span><span class="dot">✦</span>
+    <span>Narah Hair Collection</span><span class="dot">✦</span>
+    <!-- duplicate for seamless loop -->
+    <span>Lace Front Wig</span><span class="dot">✦</span>
+    <span>Gid Débutant</span><span class="dot">✦</span>
+    <span>Kou Anliy</span><span class="dot">✦</span>
+    <span>Nan Lang Kreyòl</span><span class="dot">✦</span>
+    <span>Kit Materyèl</span><span class="dot">✦</span>
+    <span>Biznis Perik</span><span class="dot">✦</span>
+    <span>Fanm Ayisyèn</span><span class="dot">✦</span>
+    <span>Narah Hair Collection</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section class="about" id="about">
+  <div class="about-visual reveal">
+    <div class="about-card">
+      <div class="about-badge">Fondatris</div>
+      <p class="about-card-quote">
+        "Ou merite aprann nan <span>pwòp lang ou</span> — pa nan lang yon lòt moun."
+      </p>
+      <div class="about-author">
+        <div class="about-avatar">👩🏾</div>
+        <div>
+          <div class="about-author-name">Sinelia Louis</div>
+          <div class="about-author-title">Fondatris, Narah Hair Collection</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-text reveal">
+    <div class="section-label">Vizyon Nou</div>
+    <h2 class="section-title">Nou La Pou <em>Ou</em></h2>
+    <p>Narah Hair Collection kreye espesyalman pou fanm ayisyèn ki vle bati biznis yo nan endistri cheveu — san baryè lang.</p>
+    <p>Tout liv, kou, ak resous nou yo ekri ak anseye <strong>nan Kreyòl</strong>, pou ou ka aprann ak konfyans nan pwòp lang ou.</p>
+
+    <div class="about-values">
+      <div class="value-item">
+        <div class="value-icon">📚</div>
+        <div class="value-text">Kontni 100% an Kreyòl Ayisyen</div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">💼</div>
+        <div class="value-text">Aprann fè perik & bati biznis</div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🤝</div>
+        <div class="value-text">Kominote fanm sipòtif</div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">⭐</div>
+        <div class="value-text">Sètifika Narah ofisyèl</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCTS ── -->
+<section class="products" id="products">
+  <div class="products-header">
+    <div>
+      <div class="section-label">Boutik Narah</div>
+      <h2 class="section-title" style="color:var(--cream)">Pwodwi & <em style="color:var(--gold)">Kit Nou</em></h2>
+      <p class="section-sub">Kit materyèl, liv kreyòl, ak perik fini — tout sa ou bezwen pou kòmanse.</p>
+    </div>
+    <a href="#contact" class="btn-primary">Wè Tout Pwodwi</a>
+  </div>
+
+  <div class="products-grid">
+
+    <div class="product-card featured reveal">
+      <div class="product-badge-feat">⭐ Plis Vann</div>
+      <div class="product-thumb p-gold">📦</div>
+      <div class="product-body">
+        <div class="product-cat">Kit Débutant</div>
+        <div class="product-name">Kit Materyèl Débutant Konplè</div>
+        <div class="product-desc">Tout zouti ou bezwen pou kòmanse: wig cap, mannequin head, zegwi ventilation, sizo, T-pins, fil ak plis.</div>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">$65</div>
+            <span class="product-price-sub">Livrezon disponib</span>
+          </div>
+          <button class="product-btn" onclick="openModal('Kit Materyèl Débutant', '$65')">Achte</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <div class="product-thumb p-rose">📚</div>
+      <div class="product-body">
+        <div class="product-cat">Liv Kreyòl</div>
+        <div class="product-name">Gid Perik Pou Débutant</div>
+        <div class="product-desc">Liv konplè an Kreyòl — 7 chapit, etap pa etap, pou fanm ki vle aprann fè premye perik yo.</div>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">$25</div>
+            <span class="product-price-sub">PDF & Fizik disponib</span>
+          </div>
+          <button class="product-btn" onclick="openModal('Gid Perik Pou Débutant', '$25')">Achte</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <div class="product-thumb p-blue">💆</div>
+      <div class="product-body">
+        <div class="product-cat">Bundle Espesyal</div>
+        <div class="product-name">Bundle Liv + Kit Materyèl</div>
+        <div class="product-desc">Kominasyon pafè: Gid Débutant + Kit Materyèl Konplè. Ekonomize $15 sou pri nòmal.</div>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">$75</div>
+            <span class="product-price-sub">Ekonomize $15</span>
+          </div>
+          <button class="product-btn" onclick="openModal('Bundle Liv + Kit', '$75')">Achte</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── COURSES ── -->
+<section class="courses" id="courses">
+  <div class="section-label">Klas Anliy</div>
+  <h2 class="section-title">Kou Narah <em>Kreyòl</em></h2>
+  <p class="section-sub">Aprann nan pwòp vitès ou — vide, pratik, ak sètifika ofisyèl, tout sa an Kreyòl.</p>
+
+  <div class="courses-grid">
+
+    <div class="course-card reveal">
+      <div class="course-head c-gold">
+        <div class="course-level">Nivo 1</div>
+        <div class="course-title">Premye Perik Ou</div>
+        <p style="font-size:0.82rem;color:rgba(250,243,232,0.5);margin-top:8px">Pafè pou moun ki janm fè perik anvan</p>
+        <div class="course-price-badge">$97</div>
+      </div>
+      <div class="course-body">
+        <ul class="course-includes">
+          <li>12 leson vide an Kreyòl</li>
+          <li>Gid Débutant PDF gratis</li>
+          <li>Aksè gwoup kominote prive</li>
+          <li>Sètifika Narah Nivo 1</li>
+          <li>Sipò dirèk 30 jou</li>
+        </ul>
+        <button class="course-enroll" onclick="openModal('Kou Nivo 1', '$97')">Enskri Kounye A</button>
+      </div>
+    </div>
+
+    <div class="course-card reveal">
+      <div class="course-head c-rose">
+        <div class="course-level">Nivo 2 ⭐ Popilè</div>
+        <div class="course-title">Teknik Avanse & Biznis</div>
+        <p style="font-size:0.82rem;color:rgba(250,243,232,0.5);margin-top:8px">Pou moun ki fini Nivo 1 oswa gen eksperyans</p>
+        <div class="course-price-badge">$197</div>
+      </div>
+      <div class="course-body">
+        <ul class="course-includes">
+          <li>20 leson vide avanse</li>
+          <li>Teknik lace front & full lace</li>
+          <li>Kijan fiks pri & jwenn kliyan</li>
+          <li>Sètifika Narah Nivo 2</li>
+          <li>Mentora prive 2 sesyon</li>
+        </ul>
+        <button class="course-enroll" onclick="openModal('Kou Nivo 2', '$197')">Enskri Kounye A</button>
+      </div>
+    </div>
+
+    <div class="course-card reveal">
+      <div class="course-head c-green">
+        <div class="course-level">Masterclass VIP</div>
+        <div class="course-title">Bati Anpir Biznis Ou</div>
+        <p style="font-size:0.82rem;color:rgba(250,243,232,0.5);margin-top:8px">Pou fanm ki vle kreye yon biznis konplè</p>
+        <div class="course-price-badge">$297</div>
+      </div>
+      <div class="course-body">
+        <ul class="course-includes">
+          <li>Tout kontni Nivo 1 & 2</li>
+          <li>Kijan lanse boutik anliy ou</li>
+          <li>Estrateji TikTok & Instagram</li>
+          <li>Coaching 1:1 mensyèl</li>
+          <li>Aksè à vie (lifetime access)</li>
+        </ul>
+        <button class="course-enroll" onclick="openModal('Masterclass VIP', '$297')">Enskri Kounye A</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials" id="testimonials">
+  <div class="section-label">Temwayaj</div>
+  <h2 class="section-title">Sa Elèv Nou <em>Di</em></h2>
+
+  <div class="testimonials-grid">
+
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Mwen pa t ka kwè ou ka jwenn enfòmasyon sou perik nan Kreyòl! Sinelia eksplike tout bagay si klè. Mwen fè premye perik mwen nan 2 semèn sèlman.</p>
+      <div class="testi-author">
+        <div class="testi-avatar av1">👩🏾</div>
+        <div>
+          <div class="testi-name">Marie-Claire D.</div>
+          <div class="testi-loc">Miami, Florid</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Kit materyèl la te genyen tout bagay mwen te bezwen. M kòmanse vann perik sou Instagram epi mwen fè $400 premye mwa a. Mèsi Sinelia!</p>
+      <div class="testi-author">
+        <div class="testi-avatar av2">👩🏿</div>
+        <div>
+          <div class="testi-name">Nadège P.</div>
+          <div class="testi-loc">Brooklyn, New York</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Masterclass VIP chanje lavi mwen. Kounye a mwen gen yon boutik Shopify ak plis pase 30 kliyan regilye. Kou a vo chak sou!</p>
+      <div class="testi-author">
+        <div class="testi-avatar av3">👩🏽</div>
+        <div>
+          <div class="testi-name">Roseline M.</div>
+          <div class="testi-loc">Montreal, Kanada</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── COMMUNITY ── -->
+<section class="community" id="community">
+  <div class="big-number">500+</div>
+  <div class="community-content">
+    <div class="section-label" style="color:var(--gold)">Kominote Nou</div>
+    <h2 class="section-title">Ou Pa Pou <em style="color:var(--gold)">Kò Ou</em></h2>
+    <p class="section-sub">Rantre nan kominote fanm ayisyèn nou an — pou aprann, pataje, ak grandi ansanm.</p>
+
+    <div class="community-channels">
+      <a href="#" class="channel-pill">📱 WhatsApp Kreyòl</a>
+      <a href="#" class="channel-pill">👥 Facebook Group</a>
+      <a href="#" class="channel-pill">📸 Instagram</a>
+      <a href="#" class="channel-pill">🎵 TikTok</a>
+    </div>
+
+    <a href="#contact" class="btn-primary">Rantre Kounye A — Gratis</a>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact">
+  <div class="section-label">Kontakte Nou</div>
+  <h2 class="section-title">Kòmanse <em>Jodi A</em></h2>
+
+  <div class="contact-grid">
+    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label>Non Ou</label>
+        <input type="text" placeholder="Egzanp: Marie Jean" required>
+      </div>
+      <div class="form-group">
+        <label>Imèl Ou</label>
+        <input type="email" placeholder="ou@gmail.com" required>
+      </div>
+      <div class="form-group">
+        <label>Kisa Ou Enterese?</label>
+        <select>
+          <option value="">Chwazi yon opsyon...</option>
+          <option>Kit Materyèl Débutant ($65)</option>
+          <option>Gid Perik Kreyòl ($25)</option>
+          <option>Kou Nivo 1 ($97)</option>
+          <option>Kou Nivo 2 ($197)</option>
+          <option>Masterclass VIP ($297)</option>
+          <option>Bundle Espesyal ($75)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mesaj (Opsyonèl)</label>
+        <textarea rows="3" placeholder="Di nou kijan nou ka ede ou..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%;text-align:center">Voye Mesaj →</button>
+    </form>
+
+    <div class="contact-info reveal">
+      <div class="contact-item">
+        <div class="contact-icon">📧</div>
+        <div>
+          <div class="contact-item-label">Imèl</div>
+          <div class="contact-item-value">info@narahhaircollection.com</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div>
+          <div class="contact-item-label">WhatsApp</div>
+          <div class="contact-item-value">+1 (305) 000-0000</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <div class="contact-item-label">Orè Sipò</div>
+          <div class="contact-item-value">Lendi–Vandredi, 9am–6pm EST</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🌍</div>
+        <div>
+          <div class="contact-item-label">Nou Sèvi</div>
+          <div class="contact-item-value">USA, Kanada, Ayiti & Karayib</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Narah Hair Collection</div>
+      <p class="footer-desc">Premye platfòm kreyòl pou aprann fè perik epi bati biznis. Pa Sinelia Louis.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Boutik</div>
+      <ul class="footer-links">
+        <li><a href="#">Kit Débutant</a></li>
+        <li><a href="#">Gid Kreyòl</a></li>
+        <li><a href="#">Bundle</a></li>
+        <li><a href="#">Kou Nivo 1</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Aprann</div>
+      <ul class="footer-links">
+        <li><a href="#">Kou Nivo 1</a></li>
+        <li><a href="#">Kou Nivo 2</a></li>
+        <li><a href="#">Masterclass VIP</a></li>
+        <li><a href="#">Sètifika</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Konpani</div>
+      <ul class="footer-links">
+        <li><a href="#">Vizyon Nou</a></li>
+        <li><a href="#">Kominote</a></li>
+        <li><a href="#">Kontakte Nou</a></li>
+        <li><a href="#">Règleman</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Narah Hair Collection. Tout dwa rezève. Pa Sinelia Louis.</div>
+    <div class="footer-socials">
+      <a href="#" class="social-btn">📸</a>
+      <a href="#" class="social-btn">🎵</a>
+      <a href="#" class="social-btn">👥</a>
+      <a href="#" class="social-btn">📱</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div style="font-size:3rem;margin-bottom:16px">🛒</div>
+    <h3 id="modal-title">Achte Pwodwi</h3>
+    <p id="modal-price" style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);font-weight:700;margin-bottom:8px"></p>
+    <p>Pou konplete achte ou a, kontakte nou sou WhatsApp oswa imèl pou konfirmasyon ak detay peman.</p>
+    <a href="#contact" class="btn-primary" onclick="closeModalBtn()" style="margin-top:8px">Kontakte Nou →</a>
+  </div>
+</div>
+
+<script>
+// ── SCROLL REVEAL
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
+
+// ── NAV SCROLL
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if (window.scrollY > 60) {
+    nav.style.height = '58px';
+  } else {
+    nav.style.height = '70px';
+  }
+});
+
+// ── MOBILE MENU
+function toggleMenu() {
+  const links = document.querySelector('.nav-links');
+  if (links.style.display === 'flex') {
+    links.style.display = 'none';
+  } else {
+    links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(18,12,7,0.97);padding:24px 5%;gap:20px;border-bottom:1px solid rgba(201,168,76,0.15);backdrop-filter:blur(14px)';
+  }
+}
+
+// ── MODAL
+function openModal(name, price) {
+  document.getElementById('modal-title').textContent = name;
+  document.getElementById('modal-price').textContent = price;
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal(e) {
+  if (e.target === document.getElementById('modal')) closeModalBtn();
+}
+function closeModalBtn() {
+  document.getElementById('modal').classList.remove('open');
+}
+
+// ── FORM SUBMIT
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.textContent = '✓ Mesaj Voye!';
+  btn.style.background = 'var(--green)';
+  setTimeout(() => {
+    btn.textContent = 'Voye Mesaj →';
+    btn.style.background = '';
+    e.target.reset();
+  }, 3000);
+}
+</script>
+</body>
+</html>
